@@ -1,0 +1,19 @@
+{
+  "name": "Python 3 + Kaggle + Claude Code",
+  "build": {
+    "dockerfile": "Dockerfile"
+  },
+
+  "runArgs": ["--env-file", ".devcontainer/.env"],
+
+  "mounts": [
+    "source=claude-code-config,target=/home/vscode/.claude,type=volume",
+    "source=kaggle-cache,target=/home/vscode/.cache/kaggle,type=volume"
+  ],
+
+  "customizations": {
+    "vscode": {
+      "extensions": ["ms-python.python"]
+    }
+  }
+}
